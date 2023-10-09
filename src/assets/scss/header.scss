@@ -1,0 +1,64 @@
+@import 'variables';
+/*HEADER*/
+
+#menu{
+    display: none;
+  }
+  
+  .menu-icono{
+    width: 25px;
+  }
+  
+  .menu label{
+    cursor: pointer;
+    display: none;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 90px;
+    max-height: $header-height;
+    min-height: $header-height;
+    height: $header-height;
+    background-color: $color-background2;
+    opacity: 0.9;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.10);
+  }
+
+  #logo img{
+    width: 200px;
+    cursor: pointer;
+    padding: 15px;
+  }
+
+  nav{
+    height: 50px;
+    font-size: 1.25rem;
+
+    ul {
+        list-style: none;
+        margin-bottom: 0;
+      }
+
+    li {
+        padding: 0.75rem 2rem;
+        font-weight: 300;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-texto;
+    }
+
+    ul li:hover{
+        color: $color-texto;
+        cursor: pointer;
+        background-color: $color-botones;
+    }
+}
+  
