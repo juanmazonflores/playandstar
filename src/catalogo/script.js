@@ -17,8 +17,8 @@ class Catalogo {
 
 // Objetos peliculas
 const pelicula1 = new Catalogo(1, "The Eras Tour", "Cinepolis", "Cinepolis Hermosillo", "13/Octubre/2023", "", 150, "pelicula1.jpg");
-const pelicula2 = new Catalogo(2, "Scream VI", "Cinemex", "Cinemex Metro Centro", "26/octubre/2023", "", 200, "pelicula2.webp");
-const pelicula3 = new Catalogo(3, "Coraline", "Cinepolis", "Cinepolis Galerias", "9/noviembre/2023", "", 180, "pelicula3.jpg");
+const pelicula2 = new Catalogo(2, "Scream VI", "Cinemex", "Cinemex Metro Centro", "26/octubre/2023", "", 200, "pelicula3.jpg");
+const pelicula3 = new Catalogo(3, "Coraline", "Cinepolis", "Cinepolis Galerias", "9/noviembre/2023", "", 180, "pelicula2.webp");
 
 //Almacenar objetos en array
 const catalogo = [pelicula1, pelicula2, pelicula3];
