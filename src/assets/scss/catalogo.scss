@@ -1,0 +1,119 @@
+/*CATALOGO*/
+@import 'variables';
+
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+    thead tr {
+      background-color: $color-background;
+      color: $color-texto;
+      text-align: left;
+  
+      th {
+        border: none;
+        font-size: 1.125rem;
+        padding: 2rem 1.25rem;
+        white-space: nowrap;
+      }
+    }
+  
+    tbody tr {
+      border-bottom: none;
+  
+      &:nth-of-type(even) {
+        background-color: $color-background;
+      }
+  
+      &:last-of-type {
+        border-bottom: 4px solid $color-texto;
+      }
+  
+      td {
+        padding: 1rem 1.25rem;
+        border: none;
+        white-space: wrap;
+  
+        img {
+          max-width: 100px;
+          height: auto;
+        }
+      }
+    }
+  
+  }
+  
+  #message-not-found {
+    display: none;
+    text-align: center;
+    font-size: 1rem;
+    padding: 2rem;
+  }
+  
+  
+  /* Estilos para la sección de filtros */
+  #filter-section {
+    background-color: $color-background2;
+    padding: 2rem;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    
+  }
+  
+  /* Estilos para los campos de filtro */
+  input[type="text"],
+  input[type="number"] {
+    flex-grow: 1;
+    min-width: 200px;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: $color-background2;
+    font-family: $font-family;
+    border: 1px solid $color-input;
+  
+    &:focus, &:hover, &:active {
+      border: 1px solid $color-botones;
+      color: $color-texto;
+    }
+  }
+  
+  /* Estilos para el botón del filtro */
+  button {
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: $color-background 0.3s;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    font-family: $font-family;
+  
+    &#apply-filters {
+      background-color: $color-botones;
+      color: $color-texto;
+    }
+  
+    &#apply-filters:hover {
+      background-color: darken($color-background, 0%);
+    }
+  
+    &#reset-filters {
+      background-color:$color-botones;
+      color: $color-texto;
+    }
+  
+    &#reset-filters:hover {
+      background-color: darken($color-background, 0%);
+    }
+  }
+  
