@@ -17,7 +17,7 @@
       background-color: $color-background;
       color: $color-texto;
       text-align: left;
-  
+      text-align: center;
       th {
         border: none;
         font-size: 1.125rem;
@@ -34,14 +34,14 @@
       }
   
       &:last-of-type {
-        border-bottom: 4px solid $color-texto;
+        border-bottom: 4px solid $color-background2;
       }
   
       td {
         padding: 1rem 1.25rem;
         border: none;
         white-space: wrap;
-  
+        text-align: center;
         img {
           max-width: 100px;
           height: auto;
@@ -70,24 +70,43 @@
     align-items: center;
     
   }
+
+  
+  input[type="text"],
+  input[type="number"],  
+  input[type="date"]{
+    display:none;
+  }
   
   /* Estilos para los campos de filtro */
   input[type="text"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="date"],select{
     flex-grow: 1;
     min-width: 200px;
+    max-width: 250px;
     font-size: 1rem;
     padding: 1rem;
     background-color: $color-background2;
     font-family: $font-family;
     border: 1px solid $color-input;
-  
+    color: $color-texto2;
     &:focus, &:hover, &:active {
       border: 1px solid $color-botones;
       color: $color-texto;
     }
+
+    &::-webkit-inner-spin-button,&::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 2px;
+      opacity: 0.6;
+      filter: invert(0.8);
+    }
   }
-  
+
+
+
   /* Estilos para el botón del filtro */
   button {
     border: none;
@@ -115,5 +134,16 @@
     &#reset-filters:hover {
       background-color: darken($color-background, 0%);
     }
+
+    &#delete-filters{
+      background-color:$color-botones;
+      color: $color-texto;
+    }
+  
+    &#delete-filters:hover {
+      background-color: darken($color-background, 0%);
+    }
+
+    
   }
   

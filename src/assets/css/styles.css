@@ -171,6 +171,7 @@ table thead tr {
   background-color: #3D0000;
   color: #FFFFFF;
   text-align: left;
+  text-align: center;
 }
 table thead tr th {
   border: none;
@@ -185,12 +186,13 @@ table tbody tr:nth-of-type(even) {
   background-color: #3D0000;
 }
 table tbody tr:last-of-type {
-  border-bottom: 4px solid #FFFFFF;
+  border-bottom: 4px solid #0D0D0D;
 }
 table tbody tr td {
   padding: 1rem 1.25rem;
   border: none;
   white-space: wrap;
+  text-align: center;
 }
 table tbody tr td img {
   max-width: 100px;
@@ -215,23 +217,46 @@ table tbody tr td img {
   align-items: center;
 }
 
+input[type=text],
+input[type=number],
+input[type=date] {
+  display: none;
+}
+
 /* Estilos para los campos de filtro */
 input[type=text],
-input[type=number] {
+input[type=number],
+input[type=date], select {
   flex-grow: 1;
   min-width: 200px;
+  max-width: 250px;
   font-size: 1rem;
   padding: 1rem;
   background-color: #0D0D0D;
   font-family: "Poppins", sans-serif;
   border: 1px solid #7D7463;
+  color: #7D7463;
 }
 input[type=text]:focus, input[type=text]:hover, input[type=text]:active,
 input[type=number]:focus,
 input[type=number]:hover,
-input[type=number]:active {
+input[type=number]:active,
+input[type=date]:focus,
+input[type=date]:hover,
+input[type=date]:active, select:focus, select:hover, select:active {
   border: 1px solid #AB1C15;
   color: #FFFFFF;
+}
+input[type=text]::-webkit-inner-spin-button, input[type=text]::-webkit-calendar-picker-indicator,
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-calendar-picker-indicator,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator, select::-webkit-inner-spin-button, select::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  filter: invert(0.8);
 }
 
 /* Estilos para el botón del filtro */
@@ -256,6 +281,13 @@ button#reset-filters {
   color: #FFFFFF;
 }
 button#reset-filters:hover {
+  background-color: #3d0000;
+}
+button#delete-filters {
+  background-color: #AB1C15;
+  color: #FFFFFF;
+}
+button#delete-filters:hover {
   background-color: #3d0000;
 }
 

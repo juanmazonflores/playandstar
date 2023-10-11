@@ -16,9 +16,9 @@ class Catalogo {
 }
 
 // Objetos peliculas
-const pelicula1 = new Catalogo(1, "The Eras Tour", "Cinepolis", "Cinepolis Hermosillo", "13/Octubre/2023", "", 150, "pelicula1.jpg");
-const pelicula2 = new Catalogo(2, "Scream VI", "Cinemex", "Cinemex Metro Centro", "26/octubre/2023", "", 200, "pelicula3.jpg");
-const pelicula3 = new Catalogo(3, "Coraline", "Cinepolis", "Cinepolis Galerias", "9/noviembre/2023", "", 180, "pelicula2.webp");
+const pelicula1 = new Catalogo(1, "The Eras Tour", "Cinepolis", "Hermosillo", "2023-10-13", "Premiere", 150, "pelicula1.jpg");
+const pelicula2 = new Catalogo(2, "Scream VI", "Cinemex", "Metro Centro", "2023-10-26", "Premium", 200, "pelicula3.jpg");
+const pelicula3 = new Catalogo(3, "Coraline", "Cinepolis", "Galerias", "2023-11-9", "Premium", 180, "pelicula2.webp");
 
 //Almacenar objetos en array
 const catalogo = [pelicula1, pelicula2, pelicula3];
@@ -60,9 +60,9 @@ function displayTable(peliculas) {
               <td>${pelicula.nombre}</td>
               <td>${pelicula.franquicia}</td>
               <td>${pelicula.lugar}</td>
-              <td>${pelicula.fecha}</td>
+              <td>${formatDate(pelicula.fecha)}</td>
               <td>${pelicula.descripcion}</td>
-              <td>${pelicula.precio}</td>
+              <td>${formatCurrency(pelicula.precio)}</td>
             `;
 
                 tablaBody.appendChild(row);
@@ -103,4 +103,9 @@ function hideMessage() {
     messageNotFound.style.display = 'none';
 }
 
+//FILTROS
+
+
+
 displayTable(catalogo);
+
