@@ -55,7 +55,6 @@ function displayTable(peliculas) {
                 const row = document.createElement('tr');
 
                 row.innerHTML = `
-              <td> ${pelicula.id} </td>
               <td> <img src="${imagePath + pelicula.imagen}" alt="${pelicula.nombre}" width="100"> </td>
               <td>${pelicula.nombre}</td>
               <td>${pelicula.franquicia}</td>
@@ -104,8 +103,116 @@ function hideMessage() {
 }
 
 //FILTROS
+// Mostrar filtros
+function mostrar(id) {
+    const nombre = document.getElementById("nombre");
+    const franquicia = document.getElementById("franquicia");
+    const lugar = document.getElementById("lugar");
+    const fechamin = document.getElementById("fecha-min");
+    const fechamax = document.getElementById("fecha-max");
+    const descripcion = document.getElementById("descripcion");
+    const preciomin = document.getElementById("precio-min");
+    const preciomax = document.getElementById("precio-max");
 
+    if (id == "nombre") {
+        nombre.style.display = "initial";
+    }
 
+    if (id == "franquicia") {
+        franquicia.style.display = "initial";
+    }
 
+    if (id == "lugar") {
+        lugar.style.display = "initial";
+    }
+
+    if (id == "fecha") {
+        fechamax.style.display = "initial";
+        fechamin.style.display = "initial";
+    }
+    if (id == "descripcion") {
+        descripcion.style.display = "initial";
+    }
+    if (id == "precio") {
+        preciomin.style.display = "initial";
+        preciomax.style.display = "initial";
+    }
+}
+
+function initButtonsHandler() {
+
+    document.getElementById('filter-form').addEventListener('submit', event => {
+        event.preventDefault();
+        applyFilters();
+    });
+
+    document.getElementById('reset-filters').addEventListener('click', () => {
+        document.querySelectorAll('input.filter-field').forEach(input => input.value = '');
+        applyFilters();
+    });
+
+    document.getElementById('delete-filters').addEventListener('click', () => {
+        document.querySelectorAll('input.filter-field').forEach(input => input.value = '');
+        applyFilters();
+        quitarFiltros();
+    });
+
+}
+
+function applyFilters() {
+    const filtroNombre = document.getElementById('nombre').value.toLowerCase();
+    const filtroFranquicia = document.getElementById('franquicia').value.toLowerCase();
+    const filtroDescripcion = document.getElementById('descripcion').value.toLowerCase();
+    const filtroLugar = document.getElementById('lugar').value.toLowerCase();
+    const filtroFechaMin = document.getElementById('fecha-min').value;
+    const filtroFechaMax = document.getElementById('fecha-max').value;
+    const filtroPrecioMin = parseFloat(document.getElementById('precio-min').value);
+    const filtroPrecioMax = parseFloat(document.getElementById('precio-max').value);
+
+    const PeliculasFiltradas = filtrarPeliculas(catalogo, filtroNombre, filtroFranquicia, filtroDescripcion, filtroLugar, filtroFechaMin, filtroFechaMax, filtroPrecioMin, filtroPrecioMax);
+
+    displayTable(PeliculasFiltradas);
+}
+
+function filtrarPeliculas(peliculas, nombre, franquicia, descripcion, lugar, fechaMin, fechaMax, precioMin, precioMax) {
+    const fechaMin1 = Date.parse(fechaMin);
+    const fechaMax1 = Date.parse(fechaMax);
+    console.log(fechaMin1);
+    console.log(fechaMax1);
+
+    return peliculas.filter(pelicula =>
+        (!fechaMin1 || Date.parse(pelicula.fecha) >= fechaMin1) &&
+        (!fechaMax1 || Date.parse(pelicula.fecha) <= fechaMax1) &&
+        (!precioMin || pelicula.price >= precioMin) &&
+        (!precioMax || pelicula.price <= precioMax) &&
+        (!nombre || pelicula.nombre.toLowerCase().includes(nombre)) &&
+        (!franquicia || pelicula.franquicia.toLowerCase().includes(franquicia)) &&
+        (!descripcion || pelicula.descripcion.toLowerCase().includes(descripcion)) &&
+        (!lugar || pelicula.lugar.toLowerCase().includes(lugar))
+    );
+}
+
+function quitarFiltros(){
+    const nombre = document.getElementById("nombre");
+    const franquicia = document.getElementById("franquicia");
+    const lugar = document.getElementById("lugar");
+    const fechamin = document.getElementById("fecha-min");
+    const fechamax = document.getElementById("fecha-max");
+    const descripcion = document.getElementById("descripcion");
+    const preciomin = document.getElementById("precio-min");
+    const preciomax = document.getElementById("precio-max");
+    
+    nombre.style.display = "none";
+    franquicia.style.display = "none";
+    lugar.style.display = "none";
+    fechamax.style.display = "none";
+    fechamin.style.display = "none";
+    descripcion.style.display = "none";
+    preciomin.style.display = "none";
+    preciomax.style.display = "none";
+
+}
+
+initButtonsHandler();
 displayTable(catalogo);
 

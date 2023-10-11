@@ -15,7 +15,7 @@
         </label>
         <nav class="navbar">
             <ul class="fx-row fx-align-items-center fx-content-space-between">
-              <li><a href="#">Catalogo</a></li>
+              <li><a href="#">Catálogo</a></li>
               <li><a href="./ventas/index.html">Ventas</a></li>
             </ul>
 
@@ -29,7 +29,7 @@
     
     <main>
 
-      <h1>Catalogo de Salas</h1>
+      <h1>Catálogo de Salas</h1>
        <form id="filter-form">
         
         <div id="filter-section">
@@ -40,7 +40,7 @@
             <option value="franquicia">Franquicia</option>
             <option value="lugar">Nombre de Lugar</option>
             <option value="fecha">Fecha</option>
-            <option value="descripcion">Descripcion</option>
+            <option value="descripcion">Descripción</option>
             <option value="precio">Precio</option>
           </select>
             <input type="text"   id="nombre" placeholder="Nombre de Pelicula" class="filter-field">
@@ -54,8 +54,8 @@
 
             <input type="text" id="descripcion" placeholder="Descripcion" class="filter-field">
 
-            <input type="number" id="precio-min" placeholder="Precio mínimo" class="filter-field">
-            <input type="number" id="precio-max" placeholder="Precio máximo" class="filter-field">
+            <input type="number" id="precio-min" placeholder="Precio mínimo" class="filter-field" min="0">
+            <input type="number" id="precio-max" placeholder="Precio máximo" class="filter-field" min="0">
           
           <button type="submit" id="apply-filters">Aplicar filtros</button>
           <button type="reset" id="reset-filters">Restablecer</button>
@@ -70,13 +70,12 @@
         <table id="data-table">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Imagen</th>
               <th>Nombre</th>
               <th>Franquicia</th>
               <th>Lugar</th>
               <th>Fecha</th>
-              <th>Descripcion</th>
+              <th>Descripción</th>
               <th>Precio</th>
             </tr>
           </thead>
