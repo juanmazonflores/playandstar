@@ -31,9 +31,14 @@ main {
 h1 {
   font-size: 1.75rem;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.text-right {
+  text-align: right;
 }
 
 /*FLEX*/
@@ -156,61 +161,7 @@ nav ul li:hover {
     display: initial;
   }
 }
-/*BUTTONS*/
-/*CATALOGO*/
-.table-container {
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  white-space: nowrap;
-  font-size: 1rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-table thead tr {
-  background-color: #3D0000;
-  color: #FFFFFF;
-  text-align: left;
-  text-align: center;
-}
-table thead tr th {
-  border: none;
-  font-size: 1.125rem;
-  padding: 2rem 1.25rem;
-  white-space: nowrap;
-}
-table tbody tr {
-  border-bottom: none;
-}
-table tbody tr:nth-of-type(even) {
-  background-color: #3D0000;
-}
-table tbody tr:last-of-type {
-  border-bottom: 4px solid #0D0D0D;
-}
-table tbody tr td {
-  padding: 1rem 1.25rem;
-  border: none;
-  white-space: wrap;
-  text-align: center;
-}
-table tbody tr td img {
-  max-width: 100px;
-  height: auto;
-}
-
-#message-not-found {
-  display: none;
-  text-align: center;
-  font-size: 1rem;
-  padding: 2rem;
-}
-
-/* Estilos para la sección de filtros */
-#filter-section {
+.filter-section {
   background-color: #0D0D0D;
   padding: 2rem;
   border: none;
@@ -218,6 +169,21 @@ table tbody tr td img {
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  background-color: white;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
 }
 
 input[type=text],
@@ -272,26 +238,78 @@ button {
   padding: 1rem 1.5rem;
   font-family: "Poppins", sans-serif;
 }
-button#apply-filters {
+button.btn-action {
   background-color: #AB1C15;
   color: #FFFFFF;
 }
-button#apply-filters:hover {
-  background-color: #3d0000;
+button.btn-action:hover {
+  background-color: #0a0000;
 }
-button#reset-filters {
+button.btn-submit {
   background-color: #AB1C15;
   color: #FFFFFF;
 }
-button#reset-filters:hover {
+button.btn-submit:hover {
   background-color: #3d0000;
 }
-button#delete-filters {
+button.btn {
   background-color: #AB1C15;
   color: #FFFFFF;
 }
-button#delete-filters:hover {
+button.btn:hover {
   background-color: #3d0000;
+}
+
+/*CATALOGO*/
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table thead tr {
+  background-color: #3D0000;
+  color: #FFFFFF;
+  text-align: left;
+  text-align: center;
+}
+table thead tr th {
+  border: none;
+  font-size: 1.125rem;
+  padding: 2rem 1.25rem;
+  white-space: nowrap;
+}
+table tbody tr {
+  border-bottom: none;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: #3D0000;
+}
+table tbody tr:last-of-type {
+  border-bottom: 4px solid #0D0D0D;
+}
+table tbody tr td {
+  padding: 1rem 1.25rem;
+  border: none;
+  white-space: wrap;
+  text-align: center;
+}
+table tbody tr td img {
+  max-width: 100px;
+  height: auto;
+}
+
+.message {
+  display: none;
+  text-align: center;
+  font-size: 1rem;
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

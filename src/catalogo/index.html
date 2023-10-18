@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css" />
+    <title>Play&Star</title>
+</head>
+<body>
+    
+    <header id=¨header¨ class="fx-row fx-content-space-between fx-align-items-center">
+      <div class="menu container">
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+            <img src="../assets/img/menu.png" class="menu-icono">
+        </label>
+        <nav class="navbar">
+            <ul class="fx-row fx-align-items-center fx-content-space-between">
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="../catalogo/index.html">Catalogo</a></li>
+              <li><a href="../ventas/index.html">Ventas</a></li>
+            </ul>
+
+        </nav>
+      </div>
+
+      <a id="logo" href="/" class="fx-row">
+        <img src="../assets/img/logo.png" title="Play&Star">
+      </a>  
+    </header>
+    
+    <main>
+
+      <h1>Catálogo de Salas</h1>
+       <form id="filter-form" class="filter-section">
+
+          <h4>Agregar filtro por:</h4>
+          <select id="status" name="status" onchange="mostrar(value);">
+            <option value="" selected disabled hidden>Selecciona un filtro</option>
+            <option value="nombre">Nombre</option>
+            <option value="franquicia">Franquicia</option>
+            <option value="lugar">Nombre de Lugar</option>
+            <option value="fecha">Fecha</option>
+            <option value="descripcion">Descripción</option>
+            <option value="precio">Precio</option>
+          </select>´
+
+            <input type="text"   id="nombre" placeholder="Nombre de Pelicula" class="filter-field">
+            <input type="text" id="franquicia" placeholder="Nombre Franquicia" class="filter-field">
+            <input type="text" id="lugar" placeholder="Nombre Lugar" class="filter-field">
+            <input class="fecha" type="text"  id="fecha-min" placeholder="Fecha mínimo" class="filter-field" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input class="fecha" type="text"  id="fecha-max" placeholder="Fecha máximo" class="filter-field" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="text" id="descripcion" placeholder="Descripcion" class="filter-field">
+            <input type="number" id="precio-min" placeholder="Precio mínimo" class="filter-field" min="0">
+            <input type="number" id="precio-max" placeholder="Precio máximo" class="filter-field" min="0">
+          
+          <button type="submit" id="apply-filters" class="btn-submit">Aplicar filtros</button>
+          <button type="reset" id="reset-filters" class="btn">Restablecer</button>
+          <button type="reset" id="delete-filters" class="btn">Quitar filtros</button>
+      
+      </form>
+  
+      <br>
+  
+      <div class="table-container">
+  
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Franquicia</th>
+              <th>Lugar</th>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody id="data-table-body">
+            <!-- Aquí se generará la tabla dinámicamente -->
+          </tbody>
+        </table>
+  
+      </div>
+  
+      <div id="message-not-found" class="message">
+        <p>No hay salas disponibles en este momento.</p>
+      </div>
+  
+    </main>
+
+    <script src="../shared/utils.js"></script>
+    <script src="./script.js"></script>
+  
+  
+</body>
+</html>
