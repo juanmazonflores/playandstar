@@ -30,10 +30,131 @@
     
     <main>
 
-        <h1>Ventas</h1>
+      <h1>VENTAS</h1>
+
+      <div class="fx-row fx-space-between fx-items-center">
+  
+        <button id="addSale" class="btn-action">Agregar Nueva Venta</button>
+  
+      </div>
+
+        <form id="filter-form" class="filter-section">
+
+          <h4>Agregar filtro por:</h4>
+
+          <select id="status" name="status" onchange="mostrar(value);">
+            <option value="" selected disabled hidden>Selecciona un filtro</option>
+            <option value="pelicula">Nombre de Pelicula</option>
+            <option value="cliente">Cliente</option>
+            <option value="vendedor">Vendedor</option>
+            <option value="fecha">Fecha</option>
+          </select>
+          
+          <!-- LEER DESDE API -->
+          <select id="pelicula-filtro" class="filter-field" placeholder="Pelicula">
+            <option value="opcion" selected disabled hidden>Selecciona un filtro</option>
+            <option value="pelicula1">The Eras Tour</option>
+            <option value="pelicula2">Scream</option>
+            <option value="pelicula3">Coraline</option>
+          </select>
+
+            <input type="text" id="cliente-filtro" placeholder="Nombre del Cliente" class="filter-field">
+            <input type="text" id="vendedor-filtro" placeholder="Nombre del Vendedor" class="filter-field">
+            <input type="text"  id="fecha-min" placeholder="Fecha de Venta" class="filter-field" onfocus="(this.type='date')" onblur="(this.type='text')">
+
+          <button type="submit" id="apply-filters" class="btn-submit">Aplicar filtros</button>
+          <button type="reset" id="reset-filters" class="btn">Restablecer</button>
+          <button type="reset" id="delete-filters" class="btn">Quitar filtros</button>
+
+      </form>
+  
+      <br>
+  
+      <div class="table-container">
+  
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>No. Venta</th>
+              <th>Cliente</th>
+              <th>Telefono</th>
+              <th>Pelicula</th>
+              <th>Vendedor</th>
+              <th>Informacion Adicional</th>
+              <th>Precio de Venta</th>
+            </tr>
+          </thead>
+          <tbody id="data-table-body">
+            <!--LLENAR LA TABLA CON API -->
+          </tbody>
+        </table>
+  
+      </div>
+  
+      <div id="message" class="message">
+        <p>No hay ventas disponibles</p>
+      </div>
+
+      <div id="modalBackground" class="modal-background">
+
+      </div>
+
+      <div id="modal" class="modal">
+
+        <h2>NUEVA VENTA</h2>
+  
+        <form id="sale-form" class="form-section fx-content-center fx-align-items-center">
+
+          <div class="inputContainer">
+            <input type="text" id="cliente" class="form-field" placeholder="Nombre del Cliente" required>
+            <label for="cliente" class="form-label">Nombre del Cliente</label>
+          </div>
+  
+          <div class="inputContainer">
+            <input type="tel" id="telefono" class="form-field" placeholder="Telefono del Cliente" required>
+            <label for="telefono" class="form-label">Teléfono del Cliente</label>
+          </div>
+  
+          <div  class="inputContainer">
+            <select id="peliculas" class="form-field"  placeholder="Selecciona la Pelicula" required>
+              <!-- LEER DESDE API -->
+              <option value="" selected disabled hidden>Selecciona la Pelicula</option>
+              <option value="pelicula1">Casa Alfa</option>
+              <option value="pelicula2">Casa Beta</option>
+              <option value="pelicula3">Casa Teta</option>
+            </select>
+            <label for="peliculas" class="form-label">Seleciona la Pelicula</label>
+          </div>
+  
+          <div  class="inputContainer">
+            <input type="number" id="salePrice" class="form-field" placeholder="Precio de Venta" required>
+            <label for="salePrice" class="form-label">Precio de Venta</label>
+          </div>
+  
+          <div  class="inputContainer">
+            <input type="text"  id="fecha" placeholder="Fecha de Venta" class="form-field" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+            <label for="saleDate" class="form-label">Fecha de Venta</label>
+          </div>
+  
+          <div  class="inputContainer">
+            <input type="text" id="salesman" class="form-field" placeholder="Nombre de Vendedor" required>
+            <label for="salesman" class="form-label">Nombre de Vendedor</label>
+          </div>
+
+          <div  class="inputContainer">
+            <textarea id="notes" class="form-field form-section" placeholder="Detalles de la Venta" required></textarea>
+            <label for="notes" class="form-label">Detalles de la Venta</label>
+          </div>
+
+          <button type="submit" id="GuardarVenta" class="btn-submit">Guardar Venta</button>
+  
+        </form>
+  
+      </div>
 
     </main>
-    
+    <script src="../shared/utils.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 </html>

@@ -31,10 +31,17 @@
   h1 {
     font-size: 1.75rem;
     margin-bottom: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h2 {
     font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
   }
 
   .text-right {

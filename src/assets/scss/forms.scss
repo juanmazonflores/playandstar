@@ -9,92 +9,133 @@
     
   }
 
-  .form-section {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    background-color: white;
-    padding: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .form-field {
-    display: flex;
-    flex-direction: column;
-  }
-
+.form-section {
+  display: flex;
   
-  input[type="text"],
-  input[type="number"],  
-  input[type="date"]{
-    display:none;
+  width: 50vw;
+  background-color: $color-background2;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-field {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  min-width: 100%;
+  max-height: 60px;
+}
+
+.form-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  background-color: $color-background2;
+  color: $color-texto;
+  font-size: 16px;    
+  padding: 0 4px;
+  transition: 0.5s;
+  z-index: 0;
+}
+
+
+.form-field:focus + .form-label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: $color-texto;
+}
+
+.form-field:focus::placeholder{
+  color: transparent;
   }
+
+.inputContainer {
+  position: relative;
+  height: 50px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+
+.filter-field{
+  display:none;
+}
+
+/* Estilos para los campos de filtro */
+.filter-field,select{
+  min-width: 200px;
+  max-width: 250px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select{
+  flex-grow: 1;
   
-  /* Estilos para los campos de filtro */
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],select{
-    flex-grow: 1;
-    min-width: 200px;
-    max-width: 250px;
-    font-size: 1rem;
-    padding: 1rem;
-    background-color: $color-background2;
-    font-family: $font-family;
-    border: 1px solid $color-input;
-    color: $color-texto2;
-    &:focus, &:hover, &:active {
-      border: 1px solid $color-botones;
-      color: $color-texto;
-    }
-
-    &::-webkit-inner-spin-button,&::-webkit-calendar-picker-indicator {
-      cursor: pointer;
-      border-radius: 4px;
-      margin-right: 2px;
-      opacity: 0.6;
-      filter: invert(0.8);
-    }
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: $color-background2;
+  font-family: $font-family;
+  border: 1px solid $color-input;
+  color: $color-texto2;
+  &:focus, &:hover, &:active {
+    border: 1px solid $color-botones;
+    color: $color-texto;
   }
 
-
-  /* Estilos para el botón del filtro */
-  button {
-    border: none;
-    padding: 0.5rem 1rem;
+  &::-webkit-inner-spin-button,&::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    transition: $color-background 0.3s;
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
-    font-family: $font-family;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
+  }
+}
 
-    &.btn-action {
-      background-color: $color-botones;
-      color: $color-texto;
-    }
-  
-    &.btn-action:hover {
-      background-color: darken($color-background, 10%);
-    }
-  
-    &.btn-submit {
-      background-color: $color-botones;
-      color: $color-texto;
-    }
-  
-    &.btn-submit:hover {
-      background-color: darken($color-background, 0%);
-    }
-  
-    &.btn {
-      background-color:$color-botones;
-      color: $color-texto;
-    }
-  
-    &.btn:hover {
-      background-color: darken($color-background, 0%);
-    }
-    
+
+/* Estilos para el botón del filtro */
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: $color-background 0.3s;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  font-family: $font-family;
+
+  &.btn-action {
+    background-color: $color-botones;
+    color: $color-texto;
+  }
+
+  &.btn-action:hover {
+    background-color: darken($color-background, 10%);
+  }
+
+  &.btn-submit {
+    background-color: $color-botones;
+    color: $color-texto;
+  }
+
+  &.btn-submit:hover {
+    background-color: darken($color-background, 0%);
+  }
+
+  &.btn {
+    background-color:$color-botones;
+    color: $color-texto;
+  }
+
+  &.btn:hover {
+    background-color: darken($color-background, 0%);
   }
   
+}

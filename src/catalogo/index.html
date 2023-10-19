@@ -30,10 +30,11 @@
     
     <main>
 
-      <h1>Catálogo de Salas</h1>
+      <h1>CATALOGO DE SALAS</h1>
        <form id="filter-form" class="filter-section">
 
           <h4>Agregar filtro por:</h4>
+          
           <select id="status" name="status" onchange="mostrar(value);">
             <option value="" selected disabled hidden>Selecciona un filtro</option>
             <option value="nombre">Nombre</option>
@@ -42,7 +43,7 @@
             <option value="fecha">Fecha</option>
             <option value="descripcion">Descripción</option>
             <option value="precio">Precio</option>
-          </select>´
+          </select>
 
             <input type="text"   id="nombre" placeholder="Nombre de Pelicula" class="filter-field">
             <input type="text" id="franquicia" placeholder="Nombre Franquicia" class="filter-field">
@@ -89,7 +90,7 @@
     </main>
 
     <script src="../shared/utils.js"></script>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   
   
 </body>
