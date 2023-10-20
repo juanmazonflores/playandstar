@@ -3,6 +3,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Play&Star</title>
 </head>
 <body>
@@ -39,9 +43,9 @@
       </div>
 
         <form id="filter-form" class="filter-section">
-
+           <!-- 
           <h4>Agregar filtro por:</h4>
-
+         
           <select id="status" name="status" onchange="mostrar(value);">
             <option value="" selected disabled hidden>Selecciona un filtro</option>
             <option value="pelicula">Nombre de Pelicula</option>
@@ -52,7 +56,7 @@
           
           <!-- LEER DESDE API -->
           <select id="pelicula-filtro" class="filter-field" placeholder="Pelicula">
-            <option value="opcion" selected disabled hidden>Selecciona un filtro</option>
+            <option value="" selected disabled hidden>Selecciona una Pelicula</option>
             <option value="pelicula1">The Eras Tour</option>
             <option value="pelicula2">Scream</option>
             <option value="pelicula3">Coraline</option>
@@ -60,7 +64,7 @@
 
             <input type="text" id="cliente-filtro" placeholder="Nombre del Cliente" class="filter-field">
             <input type="text" id="vendedor-filtro" placeholder="Nombre del Vendedor" class="filter-field">
-            <input type="text"  id="fecha-min" placeholder="Fecha de Venta" class="filter-field" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="text"  id="fecha-filtro" placeholder="Fecha de Venta" class="filter-field" onfocus="(this.type='date')" onblur="(this.type='text')">
 
           <button type="submit" id="apply-filters" class="btn-submit">Aplicar filtros</button>
           <button type="reset" id="reset-filters" class="btn">Restablecer</button>
@@ -80,8 +84,10 @@
               <th>Telefono</th>
               <th>Pelicula</th>
               <th>Vendedor</th>
-              <th>Informacion Adicional</th>
+              <th>Fecha de Venta</th>
               <th>Precio de Venta</th>
+              <th>Informacion Adicional</th>
+              <th>#</th>
             </tr>
           </thead>
           <tbody id="data-table-body">
@@ -95,7 +101,7 @@
         <p>No hay ventas disponibles</p>
       </div>
 
-      <div id="modalBackground" class="modal-background">
+      <div id="modal-background" class="modal-background">
 
       </div>
 
@@ -116,34 +122,34 @@
           </div>
   
           <div  class="inputContainer">
-            <select id="peliculas" class="form-field"  placeholder="Selecciona la Pelicula" required>
+            <select id="pelicula" class="form-field"  placeholder="Selecciona la Pelicula" required>
               <!-- LEER DESDE API -->
               <option value="" selected disabled hidden>Selecciona la Pelicula</option>
-              <option value="pelicula1">Casa Alfa</option>
-              <option value="pelicula2">Casa Beta</option>
-              <option value="pelicula3">Casa Teta</option>
+              <option value="pelicula1">The Eras Tour</option>
+              <option value="pelicula2">Scream</option>
+              <option value="pelicula3">Coraline</option>
             </select>
-            <label for="peliculas" class="form-label">Seleciona la Pelicula</label>
+            <label for="pelicula" class="form-label">Seleciona la Pelicula</label>
           </div>
   
           <div  class="inputContainer">
-            <input type="number" id="salePrice" class="form-field" placeholder="Precio de Venta" required>
-            <label for="salePrice" class="form-label">Precio de Venta</label>
+            <input type="number" id="precio" class="form-field" placeholder="Precio de Venta" required>
+            <label for="precio" class="form-label">Precio de Venta</label>
           </div>
   
           <div  class="inputContainer">
             <input type="text"  id="fecha" placeholder="Fecha de Venta" class="form-field" onfocus="(this.type='date')" onblur="(this.type='text')" required>
-            <label for="saleDate" class="form-label">Fecha de Venta</label>
+            <label for="fecha" class="form-label">Fecha de Venta</label>
           </div>
   
           <div  class="inputContainer">
-            <input type="text" id="salesman" class="form-field" placeholder="Nombre de Vendedor" required>
-            <label for="salesman" class="form-label">Nombre de Vendedor</label>
+            <input type="text" id="vendedor" class="form-field" placeholder="Nombre de Vendedor" required>
+            <label for="vendedor" class="form-label">Nombre de Vendedor</label>
           </div>
 
           <div  class="inputContainer">
-            <textarea id="notes" class="form-field form-section" placeholder="Detalles de la Venta" required></textarea>
-            <label for="notes" class="form-label">Detalles de la Venta</label>
+            <textarea id="detalles" class="form-field form-section" placeholder="Detalles de la Venta" required></textarea>
+            <label for="detalles" class="form-label">Detalles de la Venta</label>
           </div>
 
           <button type="submit" id="GuardarVenta" class="btn-submit">Guardar Venta</button>
@@ -154,6 +160,7 @@
 
     </main>
     <script src="../shared/utils.js"></script>
+    <script src="../shared/fetch-api.js"></script>
     <script src="./script.js"></script>
 
 </body>
