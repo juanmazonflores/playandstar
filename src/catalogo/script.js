@@ -104,7 +104,10 @@ function hideMessage() {
 
 //FILTROS
 // Mostrar filtros
+
+
 function mostrar(id) {
+
     const nombre = document.getElementById("nombre");
     const franquicia = document.getElementById("franquicia");
     const lugar = document.getElementById("lugar");
@@ -113,6 +116,8 @@ function mostrar(id) {
     const descripcion = document.getElementById("descripcion");
     const preciomin = document.getElementById("precio-min");
     const preciomax = document.getElementById("precio-max");
+
+
 
     if (id == "nombre") {
         nombre.style.display = "initial";
