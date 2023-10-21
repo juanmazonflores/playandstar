@@ -201,6 +201,10 @@ nav ul li:hover {
   z-index: 0;
 }
 
+#pelicula-filtro:invalid {
+  color: #7D7463;
+}
+
 .form-field:focus + .form-label {
   top: -7px;
   left: 3px;
@@ -254,7 +258,7 @@ select {
   background-color: #0D0D0D;
   font-family: "Poppins", sans-serif;
   border: 1px solid #7D7463;
-  color: #FFFFFF;
+  color: #7D7463;
 }
 input[type=text]:focus, input[type=text]:hover, input[type=text]:active,
 input[type=number]:focus,
@@ -294,6 +298,10 @@ select::-webkit-calendar-picker-indicator {
 }
 
 select:invalid {
+  color: #7D7463;
+}
+
+.filter-field:invalid {
   color: #7D7463;
 }
 

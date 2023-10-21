@@ -30,6 +30,10 @@
   z-index: 0;
 }
 
+#pelicula-filtro:invalid{
+  color: $color-texto2;
+}
+
 
 .form-field:focus + .form-label {
   top: -7px;
@@ -87,7 +91,7 @@ select{
   background-color: $color-background2;
   font-family: $font-family;
   border: 1px solid $color-input;
-  color: $color-texto;
+  color: $color-texto2;
   &:focus, &:hover, &:active {
     border: 1px solid $color-botones;
     color: $color-texto;
@@ -103,6 +107,10 @@ select{
 }
 
 select:invalid {
+  color: $color-texto2;
+}
+
+.filter-field:invalid {
   color: $color-texto2;
 }
 
